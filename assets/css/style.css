@@ -1,0 +1,188 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+html body{
+  cursor: none;
+}
+:root{
+  --background-color: rgb(255, 255, 255);
+  --sidebarbg:rgb(255, 255, 255);
+  --textcolor: rgb(0, 0, 0);
+}
+
+.darkmode{
+  --background-color: rgb(180, 72, 72);
+  --sidebarbg:rgb(16, 194, 179);
+  --textcolor: rgb(255, 255, 255);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul,ol {
+    list-style: none;
+  }
+
+  .container {
+    width: 1170px;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  h1,h2,h3,h4,h5,h6,ul,p,span,ol {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+}
+
+nav{
+  height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  align-items: center;
+  
+}
+
+nav button {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(51, 49, 49, 0.678);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s ease;
+}
+
+.sidebar.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebarcnt {
+  background-color: var(--sidebarbg);
+  min-height: 100vh;
+  overflow: auto;
+  width: 80%;
+  max-width: 350px;
+  padding: 30px;
+  position: relative;
+  transform: translateX(-100%);
+  transition: 0.2s;
+}
+
+.sidebar.active .sidebarcnt{
+  transform: translateX(0%);
+}
+
+.sidebarcnt img {
+  max-width: 150px;
+  width: 100%;
+  margin-left: 50px;
+}
+
+.sidebarcnt ul {
+  margin-top: 40px;
+}
+
+.sidebarcnt ul li a {
+  text-decoration: none;
+  color: var(--textcolor);
+  margin-bottom: 20px;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.sidebarcnt span {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  display: block;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  cursor: pointer;
+}
+
+nav .icons{
+ display: flex;
+}
+
+
+.darkbtn {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.darkbtn span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  line-height: 35px;
+}
+
+.darkbtn .darkicon {
+  line-height: 35px;
+}
+
+.darkbtn span.lighticon {
+  top: 0;
+  right: -100%;
+}
+
+body.darkmode .darkbtn span.lighticon{
+  left: -100%;
+}
+body.darkmode .darkbtn span.darkicon{
+  right: 0%;
+}
+
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--textcolor);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  z-index: 999999999999999;
+}
+
+.cursorsm {
+  width: 10px;
+  height: 10px;
+  background-color: var(--textcolor);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  z-index: 999999999999999;
+}
